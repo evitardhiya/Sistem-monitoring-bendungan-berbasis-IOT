@@ -1,0 +1,78 @@
+.wrapper{
+    width: 600px;
+    margin: 0 auto;
+}
+.rang {
+    text-align: center;
+}
+.rang-title {
+    display: inline-block;
+    width: 200px;
+}
+.rang-number-aman{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    border-width: 0;
+    font-size: 50px;
+    font-weight: 900;
+    background-color: #fff;
+    color: #00ff00
+}
+.rang-number-siaga{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    border-width: 0;
+    font-size: 50px;
+    font-weight: 900;
+    background-color: #fff;
+    color: #ffff00
+}
+.rang-number-bahaya{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    border-width: 0;
+    font-size: 50px;
+    font-weight: 900;
+    background-color: #fff;
+    color: #ff0000
+}
+.meter {
+    display: block;
+    width: 273px;
+    height: 155px;
+    margin: 0 auto;
+}
+.meter-left {
+    transform: skewX(-2deg) skewY(1deg);
+    stroke-width: 58;
+    stroke-dashoffset: 253;
+    stroke-dasharray: 120 400;
+    stroke: #00ff00;
+    fill: none;
+}
+.meter-center {
+    stroke-width:56;
+    stroke-dashoffset: 128;
+    stroke-dasharray: 120 400;
+    stroke: #ffff00;
+    fill: none;
+}
+.meter-right {
+    transform: skewX(2deg) skewY(1deg);
+    stroke-width: 58;
+    stroke-dashoffset: 5;
+    stroke-dasharray: 120 400;
+    stroke: #ff0000;
+    fill: none;
+}
+.meter-clock {
+    transform: rotate(-54deg);
+    transform-origin: 137px 146px;
+    fill: black;
+}
+.meter-circle {
+    fill: black;
+}
