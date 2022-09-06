@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.plot.ly/plot.ly-2.1.0.min.js"> </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9U17kGkf1S0CWuKcCD3818YkeH8z8QjE0jE0GmW1gYU5s9FOnJ0" crossorogin="anonymous"> </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v%.8.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.goggleapis.com/css">
+    <title> Monitoring Bendungan </title>
+  </head>
+
+  <body>
+    <div class="container border border-secondary">
+      <!-- NAVBAR -->
+      <div class="row" style="background: #D6C6DF; font-family: Lucida Sans; font-size: 20px">
+      <nav class="navbar navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-4" href="#">
+            <img src="https://drive.google.com/uc?export=view&id=1SQNcKAlA7trF4yrsg0-8lsY4hb2RnY9S" alt="Logo Unhas" width="35px" height="40px" class="d-inline-block align-text-middle"> </img>
+            <span> <strong> Departemen Fisika, Universitas Hasanuddin </strong> </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <!-- NAVBAR -->
+
+    <!-- NAVBAR PILIHAN -->
+   <div class= "row" style="background: #7C6A86; font-family: open sans; font-size: 15px">
+     <ul class="nav nav-tabs ps-5">
+       <li class="nav-item">
+         <a class="nav-link text-light" aria-current="page" href="../"> Home </a>
+       <li class="nav-item">
+         <a class="nav-link text-light" aria-current="page" href="../grafik_data/"> Grafik Data</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link active" aria-current="page" href="#"> Tabel Data </a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-light" aria-current="page" href="../jenis_sensor/"> Jenis Sensor </a>
+       </li>
+     </ul>
+   </div>
+   <!-- NAVBAR PILIHAN -->
+
+   <div class="row px-5" style="background: #f2f2f2">
+   <!--ISI-->
+   <!--baris pertama-->
+   <!--baris pertama-->
+
+   <!--baris kedua-->
+   <div class="row pt-4">
+     <div class="col p-2">
+       <div class="card text-dark mb-3" >
+         <div class="card-body">
+           <p class="card-text text-center" style="font-size: 18px; color: #440066">
+             <strong> Jangka waktu </strong>
+           </p>
+         </div>
+       </div>
+     </div>
+
+     <div class="col p-2">
+      <form method='get'>
+       <div class="card text-dark bg-light mb-3">
+         <div class="card-header" style="color: #440066"> Tanggal Awal </div>
+         <div class="card-body">
+           <p class="card-text">
+             <input type="datetime-local" class="form-control" id="1" name="awal" required>
+           </p>
+         </div>
+       </div>
+     </div>
+
+     <div class="col p-2">
+       <div class="card text-dark bg-light mb-3">
+         <div class="card-header" style="color: #440066"> Tanggal Akhir </div>
+         <div class="card-body">
+           <p class="card-text">
+             <input type="datetime-local" class="form-control" id="2" name="akhir" required>
+           </p>
+         </div>
+       </div>
+     </div>
+
+     <div class="col p-5">
+       <div class="card">
+         <button type="submit" class="btn btn-primary align-center"> Submit </button>
+       </div>
+     </div>
+    </form>
+   <!--baris kedua-->
+
+   <!--baris ketiga-->
+   <div class="col p-3">
+     <div class="card">
+       <div class="card-header" style="color: #440066"> Tabel Data </div>
+       <div class="card-body">
+         <p class="card-text">
+           <table class="table" style="font-family: arial; font-size: 15px; text-align: center">
+             <thead class="table">
+               <th scope="col"> Tanggal </th>
+               <th scope="col"> Tinggi Air </th>
+               <th scope="col"> Curah Hujan </th>
+             </thead>
+           {% if datas != '' %}
+            <tbody>
+              {% for data in datas %}
+                <tr>
+                  <td>{{data.tanggal_input}}</td>
+		  <td>{{data.ketinggian_air}}</td>
+                  <td>{{data.curah_hujan}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+           {% endif %}
+	 </table>
+
+         </div>
+       </div>
+     </div>
+   <!--baris ketiga-->
+
+   <!--copyright-->
+   <div class="row p-3">
+     <p class="text-center mx-4"> &#169; 2021 | <em style="font-family: home; font-size: 17 px"> Evita Ardhiya Ramadhani </em> </p>
+   </div>
+   <!--copyright-->
+
+ </div>
+</div>
+
+<!--    <div>
+      <div class="row" style="background: #D6C6DF; font-family: times new roman; font-size: 20px">
+        <nav class="navbar navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-4" href="#">
+            <img src="https://drive.google.com/uc?export=view&id=1SQNcKAlA7trF4yrsg0-8lsY4hb2RnY9S" alt="Logo Unhas" width="35px" height="40px" class="d-inline-block align-text-middle"> </img>
+            <span> <strong> Departemen Fisika, Universitas Hasanuddin </strong> </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="row" style="background: #7C6A86; font-family: times new roman; font-size: 15px">
+      <ul class="nav nav-tabs ms-5">
+        <li class="nav-item">
+          <a class="nav-link text-light" aria-current="page" href="../"> HOME </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" aria-current="page" href="../grafik_data/"> GRAFIK DATA </a>
+        </li>
+        <li>
+          <a class="nav-link active" href="#"> TABEL DATA </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="../jenis_sensor/"> JENIS SENSOR </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row mt-4">
+      <p style="font-family: Baskerville Old Face; font-size: 25px; text-align: center"> TABEL DATA PENGUKURAN </p>
+    </div>
+
+    <div class="row p-3" style="font-family: times new roman; font-size: 18">
+      <div class="w-25">
+        <div class="col p-3 ms-5">
+          <div class="row" style="font-size: 23px; text-align: center"> Jangka waktu </div>
+          <div class="row"> Tanggal awal: </div>
+          <div class="row">
+            <input type="datetime-local" class="form-control" id="1" name="awal" required> </div>
+          <div class="row p-3"> </div>
+          <div class="row"> Tanggal akhir: </div>
+          <div class="row">
+            <input type="datetime-local" class="form-control" id="2" name="akhir" required> </div>
+          <div class="row p-3"> </div>
+          <div class="row">
+            <button type="submit" class="btn btn-primary"> Submit </button> </div>
+        </div>
+      </div>
+
+      <div class="col p-3 w-75">
+        <table class="table" style="font-family: times new roman; font-size:14px; text-align: center">
+          <thead class="table-secondary">
+            <th scope="col"> # </th>
+            <th scope="col"> Tanggal </th>
+            <th scope="col"> Tinggi Air </th>
+            <th scope="col"> Curah Hujan </th>
+          </thead>
+        </table>
+      </div>
+
+      <div class="row p-3">
+        <p class="text-center mx-4"> &#169; 2021 | <em style="font-family: home; font-size: 17px"> Evita Ardhiya Ramadhani </em> </p>
+      </div>
+-->
+  </body>
+</html>
